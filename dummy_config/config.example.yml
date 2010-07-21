@@ -1,0 +1,7 @@
+---
+hostname: api.anidb.org
+hostport: 9000
+localport: 9812
+nat: true
+username: your_anidb_username
+password: your_password
