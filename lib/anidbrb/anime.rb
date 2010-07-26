@@ -1,15 +1,15 @@
 require 'date'
 
+require 'pp'
+
 module AniDB
   class Anime
     class << self
 
       def find(id, anime_fields = nil)
-        puts "getting anime information"
         anime_fields ||= DEFAULT_ANIME_AFIELDS
         amask = anime_fields.inject(0) { |m, k| m | ANIME_AMASKS[k] }.to_s(16)
-        puts "processed amasks, getting result..."
-        result = Session.new.send(:ANIME, :aid => id, :amask => amask).to_anidb_data
+        result = Session.new.send(:ANIME, :aid => id, :amask => amask)
         self.new(anime_fields.zip(result))
       end
     end

@@ -2,4 +2,6 @@ require 'test/unit'
 require 'shoulda'
 require 'mocha'
 
-require File.join(File.dirname(__FILE__), *%w[.. lib anidbrb])
+$:.unshift File.dirname(__FILE__) + '/../lib'
+
+require 'anidbrb'
