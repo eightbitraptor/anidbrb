@@ -1,11 +1,8 @@
 require 'date'
 
-require 'pp'
-
 module AniDB
   class Anime
     class << self
-
       def find(id, anime_fields = nil)
         anime_fields ||= DEFAULT_ANIME_AFIELDS
         amask = anime_fields.inject(0) { |m, k| m | ANIME_AMASKS[k] }.to_s(16)
